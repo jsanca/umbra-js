@@ -1,4 +1,3 @@
-# umbra-js
-# Umbra  Umbra is a didactic ray tracer written in vanilla JavaScript.  
+# Project
 
-The goal of this project is to explore the fundamentals of computer graphics from first principles: rays, vectors, intersections, lighting, shadows, reflections, and materials. Instead of relying on graphics libraries or rendering engines, Umbra uses the HTML Canvas API and plain JavaScript to build a small rendering engine step by step.  This project is mainly educational. It is intended to help understand how light, geometry, and pixels come together to create a rendered image.  ## Goals  - Build a ray tracer from scratch using vanilla JavaScript. - Understand the mathematics behind vectors, rays, and intersections. - Render simple scenes using spheres, lights, cameras, and materials. - Explore shadows, reflections, and basic shading models. - Keep the code clean, readable, and easy to evolve.  ## Philosophy  Umbra is not meant to be a production rendering engine. It is a learning project.  The focus is on clarity, experimentation, and understanding the core ideas behind ray tracing.
+Start with [docs/PROJECT.md](docs/PROJECT.md) for a concise project orientation and [docs/OSK.md](docs/OSK.md) for the workspace documentation model.
