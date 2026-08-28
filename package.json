@@ -10,9 +10,12 @@
     "preview": "vite preview",
     "test": "vitest",
     "test:run": "vitest run",
-    "typecheck": "tsc -p tsconfig.app.json --noEmit && tsc -p tsconfig.node.json --noEmit"
+    "typecheck": "tsc -p tsconfig.app.json --noEmit && tsc -p tsconfig.node.json --noEmit",
+    "verify": "bash scripts/umbra-verify.sh",
+    "verify:smoke": "bash scripts/umbra-verify.sh --with-dev-smoke"
   },
   "devDependencies": {
+    "happy-dom": "^20.11.13",
     "typescript": "^7.0.2",
     "vite": "^8.2.2",
     "vitest": "^4.1.11"
