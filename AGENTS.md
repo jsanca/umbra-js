@@ -4,7 +4,7 @@ Start with [docs/PROJECT.md](docs/PROJECT.md) for project context, then [docs/OS
 
 ## Current state (read first)
 
-- S1-001 (TypeScript + Vite baseline), S1-002 (static shell), and S1-003 (Canvas viewport + pixel writer) are **done**. G1 approved (`PASS WITH OBSERVATIONS`); the G2 review of S1-002/S1-003 is pending. S1-004 through S1-011 are planned and **not authorized** until their gates pass. Finishing a slice does not auto-authorize the next.
+- S1-001 (baseline), S1-002 (static shell), S1-003 (Canvas viewport + pixel writer), S1-004 (Vec3/Ray), and S1-005 (camera-ray generation) are **done**. G1 and G2 approved (`PASS WITH OBSERVATIONS`); S1-004 awaits G3 and S1-005 awaits G4 review. S1-006 through S1-011 are planned and **not authorized** until their gates pass. Finishing a slice does not auto-authorize the next.
 - [ENGINEERING_LOG.md](docs/engineering/ENGINEERING_LOG.md) is the compact current index of task status. Consult it, the [slice plan](docs/engineering/agents/tasks/umbra-sprint-1-slices.md), and the [review gates](docs/engineering/agents/reviews/umbra-review-gates.md) before assuming anything is authorized.
 
 ## Commands
@@ -47,6 +47,7 @@ No Three.js, WebGL/WebGPU, UI framework, external math library, rendering engine
 
 - Relative imports use a **`.js` extension** even for `.ts` sources (e.g. `import { mountShell } from './ui/shell.js'`), per `allowImportingTsExtensions` + `moduleResolution: "bundler"`.
 - `verbatimModuleSyntax: true` — use `import type { ... }` for type-only imports; `noUnusedLocals`/`noUnusedParameters` are on and will fail `build`/`typecheck`.
+- `erasableSyntaxOnly: true` — no enums, namespaces, or constructor parameter properties; use plain types/objects and explicit field assignments.
 
 ## Documentation placement
 

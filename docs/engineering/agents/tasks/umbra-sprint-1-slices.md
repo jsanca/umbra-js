@@ -1,6 +1,6 @@
 # Umbra Sprint 1 — Authorized Slice Plan
 
-Status: S1-001, S1-002, and S1-003 done (G2 approved with observations); S1-004 authorized by human instruction on 2026-08-28; S1-005 through S1-011 remain planned  
+Status: S1-001..S1-004 done (S1-002/S1-003 G2 approved with observations; S1-004 awaits G3 sign-off); S1-005 authorized by human instruction on 2026-08-28; S1-006 through S1-011 remain planned  
 Executor: Minimax / Software Engineer, only after named gate approval
 
 ## Responsibility model
@@ -21,7 +21,7 @@ Exceptions:
 
 ## Common execution rules
 
-Every slice creates an evidence-backed report in `docs/engineering/agents/reports/`, updates current knowledge only for proven facts, and stops if it encounters unapproved scope, missing prerequisites, or an unresolved gate. Expected paths are planned targets, not existing files. The actual baseline structure is chosen in Slice 1 and reviewed for ADR-002 compliance. At present, execute **only S1-004**.
+Every slice creates an evidence-backed report in `docs/engineering/agents/reports/`, updates current knowledge only for proven facts, and stops if it encounters unapproved scope, missing prerequisites, or an unresolved gate. Expected paths are planned targets, not existing files. The actual baseline structure is chosen in Slice 1 and reviewed for ADR-002 compliance. At present, execute **only S1-005**.
 
 ## S1-001 — TypeScript + Vite baseline
 
