@@ -1,5 +1,6 @@
 import { mountShell } from './ui/shell.js';
 import { createRenderController } from './controller/render-controller.js';
+import { createRequestRenderGenerator } from './core/render-request.js';
 import './ui/shell.css';
 
 const root = document.getElementById('app');
@@ -28,4 +29,16 @@ const controller = createRenderController({
   },
   width: CANVAS_WIDTH,
   height: CANVAS_HEIGHT,
+  generator: createRequestRenderGenerator({
+    output: { width: CANVAS_WIDTH, height: CANVAS_HEIGHT },
+    camera: {
+      position: { x: 0, y: 0, z: 0 },
+      lookAt: { x: 0, y: 0, z: -1 },
+      fieldOfView: Math.PI / 3,
+    },
+    scene: {
+      sphere: { center: { x: 0, y: 0, z: -3 }, radius: 1 },
+      light: { position: { x: 0, y: 5, z: -2 }, intensity: 1 },
+    },
+  }),
 });

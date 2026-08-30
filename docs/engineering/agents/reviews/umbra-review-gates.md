@@ -16,4 +16,8 @@ Report destination: `docs/engineering/agents/reviews/<task-id>-<slug>.md`
 | G8 | S1-010 first light | QA / `osk-verification-engineering`; Engineering Reviewer / `osk-adversarial-analysis` | Lit/unlit pixel evidence, fixed-scene result, limitations | Direct-light outcome meets scope and deterministic evidence | Fix or defer feature |
 | G9 | S1-011 completion | Product Authority; Knowledge Curator / `osk-knowledge-curator`; Engineering Reviewer / `osk-code-docs` | All reports/reviews, current knowledge, log, checkpoint, acceptance evidence | Documentation is traceable; no open checkpoint; product accepts Sprint 1 | Remediate documentation/evidence |
 
+
+Post-review visual evidence:
+- `docs/engineering/agents/reviews/evidence/UMBRA-S1-010-point-light-diffuse-shading.png`
+
 Any failed gate blocks the next slice. A gate report must distinguish verified findings from plausible risks and identify the next authorized action.

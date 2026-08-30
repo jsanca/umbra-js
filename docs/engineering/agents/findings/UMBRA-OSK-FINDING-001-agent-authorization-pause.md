@@ -26,3 +26,10 @@ Desired behavior. Future OSK templates should preserve explicit slice authorizat
 ## Follow-up
 
 Add explicit review/gate tasks to the roadmap so authorization boundaries are represented as executable work, not only as planning notes.
+
+## Additional evidence — S1-007
+
+A second attempted execution of a planned/not-authorized slice caused the agent to pause and request explicit Product Authority authorization. The agent correctly identified that G4/G5 were still unpassed and offered to wait for gate reviews.
+
+## Correction-Note:
+S1-006 was implemented by DeepSeek Pro, not MiniMax-M3. The authorization-pause behavior still appeared, matching MiniMax's behavior. This strengthens the interpretation that OSK governance artifacts, not a single model-specific trait, are causing agents to respect planned/not-authorized slice boundaries.

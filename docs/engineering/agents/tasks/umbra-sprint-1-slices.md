@@ -1,6 +1,6 @@
 # Umbra Sprint 1 — Authorized Slice Plan
 
-Status: S1-001..S1-004 done (S1-002/S1-003 G2 approved with observations; S1-004 awaits G3 sign-off); S1-005 authorized by human instruction on 2026-08-28; S1-006 through S1-011 remain planned  
+Status: S1-001..S1-011 done (S1-002/S1-003 G2 approved with observations; S1-004 awaits G3 sign-off; S1-005 awaits G4 review). G4, G5, G6, G7, and G8 passed `PASS WITH OBSERVATIONS` between 2026-08-29 and 2026-08-30. S1-005, S1-006, S1-007, S1-008, S1-009, S1-010, and S1-011 were authorized by human Product Authority instruction on 2026-08-28, 2026-08-29, and 2026-08-30, not solely by passed gates. G9 remains unpassed (the G9 acceptance review is the final acceptance gate for Sprint 1)  
 Executor: Minimax / Software Engineer, only after named gate approval
 
 ## Responsibility model
@@ -21,7 +21,7 @@ Exceptions:
 
 ## Common execution rules
 
-Every slice creates an evidence-backed report in `docs/engineering/agents/reports/`, updates current knowledge only for proven facts, and stops if it encounters unapproved scope, missing prerequisites, or an unresolved gate. Expected paths are planned targets, not existing files. The actual baseline structure is chosen in Slice 1 and reviewed for ADR-002 compliance. At present, execute **only S1-005**.
+Every slice creates an evidence-backed report in `docs/engineering/agents/reports/`, updates current knowledge only for proven facts, and stops if it encounters unapproved scope, missing prerequisites, or an unresolved gate. Expected paths are planned targets, not existing files. The actual baseline structure is chosen in Slice 1 and reviewed for ADR-002 compliance. At present, S1-011 is the most recently authorized slice (human Product Authority instruction; with G4/G5/G6/G7/G8 `PASS WITH OBSERVATIONS`); G9 acceptance review is pending.
 
 ## S1-001 — TypeScript + Vite baseline
 

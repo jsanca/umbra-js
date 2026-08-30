@@ -4,7 +4,15 @@ Start with [docs/PROJECT.md](docs/PROJECT.md) for project context, then [docs/OS
 
 ## Current state (read first)
 
-- S1-001 (baseline), S1-002 (static shell), S1-003 (Canvas viewport + pixel writer), S1-004 (Vec3/Ray), and S1-005 (camera-ray generation) are **done**. G1 and G2 approved (`PASS WITH OBSERVATIONS`); S1-004 awaits G3 and S1-005 awaits G4 review. S1-006 through S1-011 are planned and **not authorized** until their gates pass. Finishing a slice does not auto-authorize the next.
+- S1-001 (baseline) through S1-011 (Sprint documentation, examples, and checkpoint) are **implemented**. G4 (camera), G5 (background-gradient / first visual), G6 (sphere-intersection adversarial), G7 (RenderRequest v0 API architecture/boundary), and G8 (point-light diffuse shading) approved `PASS WITH OBSERVATIONS`. Sprint 1 implementation evidence is in `docs/engineering/agents/reports/UMBRA-S1-001-*.md` through `UMBRA-S1-011-*.md` plus the G9 checkpoint summary. Subsequent slices (Sprint 2+) are **not authorized** until explicit Product Authority authorization. Finishing a slice does not auto-authorize the next; human Product Authority authorization has been used for several Sprint 1 slices ahead of their gate, recorded explicitly in the slice plan and the slice report.
+- **Carry-forward observations remain open** (tracked in `docs/engineering/agents/tasks/backlog/UMBRA-CARRY-FORWARD.md`; CF-004 and CF-006 are resolved at S1-011 by ADR-003 and the knowledge-doc promotion; CF-007 is resolved by the now-present S1-010 screenshot):
+  - **CF-001 / G6-1** — zero-direction ray guard in `intersectSphere` (a degenerate `createRay` with `(0,0,0)` direction silently falls through to `null`; no `RangeError`).
+  - **CF-002 / G6-3** — `PixelBufferGenerator` type placement (the shared generator-contract type still lives in `smoke-generator.ts`; a future slice should move it to a neutral core module).
+  - **CF-003 / S1-008-2** — `normalToRgbaColor` NaN hardening (`clamp01` does not catch `NaN`; non-material because the pipeline only feeds finite unit vectors from `computeSphereNormal`).
+  - **CF-005 / G7-2** — `validateRenderRequest` semantic-degeneracy clarification (`position == lookAt` and `forward ∥ up` are delegated to `createCamera` during conversion, not surfaced by `validateRenderRequest`).
+  - **CF-008 / G8-2** — degenerate `light.position === hitPoint` (lightDir collapses to `VEC3_ZERO`, silent black result).
+  - **CF-009 / G8-3** — no distance attenuation in the diffuse factor (`intensity` is a flat multiplier; matches the documented formula, by design).
+  - **CF-010 / G8-4** — factory validation asymmetry (`createPointLight` validates `intensity` but not `position` finiteness; the request validator enforces position finiteness).
 - [ENGINEERING_LOG.md](docs/engineering/ENGINEERING_LOG.md) is the compact current index of task status. Consult it, the [slice plan](docs/engineering/agents/tasks/umbra-sprint-1-slices.md), and the [review gates](docs/engineering/agents/reviews/umbra-review-gates.md) before assuming anything is authorized.
 
 ## Commands
