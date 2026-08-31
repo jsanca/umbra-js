@@ -35,14 +35,16 @@ These are navigation aids, not a required taxonomy. Create an area only when it 
 
 Project-specific areas such as `rendering/`, `compiler/`, or `operations/` are equally valid when they better match the project.
 
-## Umbra planning baseline
+## Umbra Sprint 1 knowledge
 
-Until implementation evidence exists, the following documents describe approved or proposed conceptual direction and explicitly state their status:
+Sprint 1 implementation established the following current conceptual pages. Their linked engineering records preserve the implementation and review history; these pages describe the system as it exists.
 
 - [Project brief](umbra-project-brief.md)
 - [Domain model](umbra-domain-model.md)
 - [RenderRequest API contract v0](umbra-api-contract.md)
 - [Sprint 1 architecture overview](umbra-architecture-overview.md)
+- [Sprint 1 render pipeline](umbra-render-pipeline-sprint-1.md)
+- [Sprint 1 math primer](umbra-math-primer-sprint-1.md)
 
 ## Updating knowledge
 

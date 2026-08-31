@@ -1,6 +1,6 @@
 # Umbra Domain Model
 
-Status: Sprint 1 model — implemented (S1-001 through S1-010); evidence in [ENGINEERING_LOG](../engineering/ENGINEERING_LOG.md) and per-slice reports.
+Status: Sprint 1 model — implemented (S1-001 through S1-011 documented); evidence in [ENGINEERING_LOG](../engineering/ENGINEERING_LOG.md) and per-slice reports. This status records implemented knowledge, not G9 product acceptance.
 Authority: [Sprint 1 product brief](../product/SPRINT-1-PRODUCT-BRIEF.md), [ADR-002](../adr/ADR-002-sprint-1-rendering-boundaries.md); implementation source under `src/core/`.
 
 | Concept | Meaning in Sprint 1 | Ownership / boundary |
@@ -36,6 +36,8 @@ Authority: [Sprint 1 product brief](../product/SPRINT-1-PRODUCT-BRIEF.md), [ADR-
 
 - [API contract](umbra-api-contract.md)
 - [Architecture overview](umbra-architecture-overview.md)
+- [Sprint 1 render pipeline](umbra-render-pipeline-sprint-1.md)
+- [Sprint 1 math primer](umbra-math-primer-sprint-1.md)
 - [ADR-002 — Sprint 1 rendering boundaries](../adr/ADR-002-sprint-1-rendering-boundaries.md)
 - [ADR-003 — RenderRequest v0 validation policy](../adr/ADR-003-render-request-v0-validation-policy.md)
 - [Carry-forward backlog](../engineering/agents/tasks/backlog/UMBRA-CARRY-FORWARD.md)

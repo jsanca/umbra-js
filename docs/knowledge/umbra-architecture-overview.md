@@ -1,7 +1,7 @@
 # Umbra Sprint 1 Architecture Overview
 
-Status: Implemented (S1-001 through S1-010 verified)
-Authority: [ADR-001](../adr/ADR-001-typescript-vite-canvas-2d-baseline.md) and [ADR-002](../adr/ADR-002-sprint-1-rendering-boundaries.md); implementation evidence in the [S1-001..S1-010 reports](../engineering/agents/reports/).
+Status: Implemented Sprint 1 architecture (S1-001 through S1-011 documented). G1, G2, and G4–G8 have review artifacts; G3 has no recorded review artifact and G9 acceptance remains pending.
+Authority: [ADR-001](../adr/ADR-001-typescript-vite-canvas-2d-baseline.md), [ADR-002](../adr/ADR-002-sprint-1-rendering-boundaries.md), the [per-slice reports](../engineering/agents/reports/), and the listed gate reviews. This page does not itself approve a gate.
 
 ```text
 UI shell ──► render controller ──► pure rendering core ──► pixel buffer
@@ -14,7 +14,7 @@ UI shell ──► render controller ──► pure rendering core ──► pix
 
 - **Pure rendering core (`src/core/`)** — pure data and math: `Vec3`, `Ray`, `Camera`, `Sphere`, `SphereHit`, `computeSphereNormal`, `normalToRgbaColor`, `PointLight`, `lightDirectionFromHit`, `diffuseShadingColor`, `backgroundColorForDirection`, `createSolidColorGenerator` (S1-003, superseded for the fixed scene by `createBackgroundGradientGenerator` and `createSphereRenderGenerator`), `createBackgroundGradientGenerator`, `createSphereRenderGenerator`, `createRequestRenderGenerator`, `PixelBuffer`, `RgbaColor`. No browser or framework imports. ADR-002 is preserved end-to-end.
 - **Diagnostics adapter (`src/diagnostics/`)** — `createRenderDiagnostics` plus the `RenderDiagnosticsSnapshot`/`RenderDiagnosticsSink` value types and `formatStatus`/`formatDimensions`/`formatRenderTime` formatters. Passive value object; not a plugin system.
-- **Canvas output adapter (`src/canvas/`)** — `createCanvasOutputAdapter` and `assertContextMatchesBuffer`. The only module that touches `CanvasRenderingContext2D` / `ImageData`. It accepts an already-computed pixel buffer and pushes it onto a 2D context via `putImageData`.
+- **Canvas output adapter (`src/canvas/`)** — `createCanvasOutputAdapter` and `assertContextMatchesBuffer`. It owns `ImageData` creation and `putImageData`, accepts an already-computed pixel buffer, and writes it to a supplied 2D context. The controller acquires that context; this narrow exception is recorded in the G2 review rather than hidden by the boundary description.
 - **Render controller (`src/controller/`)** — `createRenderController` is the single dual-dependency module: it depends on both the pure rendering core and the Canvas output adapter. It acquires a 2D context, calls the supplied `PixelBufferGenerator`, delegates the buffer write to the adapter, records timing/status through the diagnostics adapter, and projects the snapshot onto the UI status/dims/time elements.
 - **Scene input adapter (realized in `src/core/render-request.ts`)** — the contract module that accepts `RenderRequest v0`, validates it (`validateRenderRequest`), converts it to core values (`createRequestRenderGenerator`), and returns a `PixelBufferGenerator` whose buffer dimensions are fixed by `request.output`. This is the G7-recommended "scene input adapter" seam, implemented inside the pure core so the conversion is testable and DOM/Canvas-free.
 - **UI shell (`src/ui/`)** — `mountShell` builds the static laboratory: header, viewport, status, dims, time, and lesson/pipeline panels. No control behavior beyond the Render button. The current-concept and pipeline labels remain as set in S1-002 ("Ray–Sphere Intersection" + the four-step pipeline with `intersection` highlighted); they are S1-011-known limitations (carry-forward).
@@ -68,6 +68,8 @@ The Sprint 1 architecture honors the constraints above but the following limitat
 - [ADR-003 — RenderRequest v0 validation policy](../adr/ADR-003-render-request-v0-validation-policy.md)
 - [API contract](umbra-api-contract.md)
 - [Domain model](umbra-domain-model.md)
+- [Sprint 1 render pipeline](umbra-render-pipeline-sprint-1.md)
+- [Sprint 1 math primer](umbra-math-primer-sprint-1.md)
 - [Carry-forward backlog](../engineering/agents/tasks/backlog/UMBRA-CARRY-FORWARD.md)
 - [Sprint 1 verification strategy](../engineering/umbra-verification-strategy.md)
 - [ENGINEERING_LOG](../engineering/ENGINEERING_LOG.md)

@@ -1,6 +1,6 @@
 # Umbra RenderRequest API Contract v0
 
-Status: Implemented (S1-009 through S1-010; verified by G7 and G8)
+Status: Implemented v0 contract (S1-009 through S1-010; reviewed by G7 and G8). Sprint 1 product acceptance is still pending and is not implied by this contract status.
 Authority: [Sprint 1 product brief](../product/SPRINT-1-PRODUCT-BRIEF.md), [ADR-002](../adr/ADR-002-sprint-1-rendering-boundaries.md), [ADR-003](../adr/ADR-003-render-request-v0-validation-policy.md); implementation evidence in [S1-009 report](../engineering/agents/reports/UMBRA-S1-009-render-request-v0.md) and [S1-010 report](../engineering/agents/reports/UMBRA-S1-010-point-light-diffuse-shading.md).
 
 ## Purpose
@@ -108,6 +108,7 @@ This byte-equality is asserted by `render-request.test.ts` ("produces a byte-equ
 - [ADR-003 — RenderRequest v0 validation policy](../adr/ADR-003-render-request-v0-validation-policy.md)
 - [Sprint 1 architecture overview](umbra-architecture-overview.md)
 - [Domain model](umbra-domain-model.md)
+- [Sprint 1 render pipeline](umbra-render-pipeline-sprint-1.md)
 - [S1-009 implementation report](../engineering/agents/reports/UMBRA-S1-009-render-request-v0.md)
 - [S1-010 implementation report](../engineering/agents/reports/UMBRA-S1-010-point-light-diffuse-shading.md)
 - [G7 review](../engineering/agents/reviews/UMBRA-S1-009-g7-render-request-api-boundary-review.md)

@@ -21,15 +21,15 @@ Umbra is a didactic ray tracer that helps learners understand how light becomes 
 
 ## Current State
 
-Gate G0 is approved. The repository contains OSK bootstrap documentation and the Google Stitch product mockup, but no TypeScript/Vite application, build configuration, source, or test implementation. Only `UMBRA-S1-001` is authorized; all later Sprint 1 slices remain unauthorized until their preceding gates pass.
+Sprint 1 implementation is present: a TypeScript/Vite application, deterministic rendering core, Canvas 2D presentation adapter, static learning shell, tests, and the `npm run verify` evidence hook. S1-001 through S1-011 have implementation/checkpoint records. Gate reviews exist for G1, G2, and G4–G8; G3 has no recorded review artifact, and G9 product acceptance remains pending. This is not authorization for Sprint 2.
 
 ## Architecture
 
-No implemented architecture exists. The proposed Sprint 1 architecture and its decision rationale are recorded in [ADR-001](adr/ADR-001-typescript-vite-canvas-2d-baseline.md) and [ADR-002](adr/ADR-002-sprint-1-rendering-boundaries.md); they are planning decisions, not claims about current implementation.
+The implemented Sprint 1 architecture separates a pure rendering core from diagnostics, Canvas output, controller, and UI-shell layers. The current explanation is the [Sprint 1 architecture overview](knowledge/umbra-architecture-overview.md); [ADR-001](adr/ADR-001-typescript-vite-canvas-2d-baseline.md) and [ADR-002](adr/ADR-002-sprint-1-rendering-boundaries.md) retain the decision rationale.
 
 ## Technology
 
-Planned baseline: TypeScript, Vite, browser Canvas 2D, and a browser test layer selected during Slice 1. No package manager lockfile, dependencies, commands, or deployment target exist yet.
+TypeScript, Vite, browser Canvas 2D, Vitest, and happy-dom shell/controller tests. The reproducible local commands are `npm run build`, `npm run test:run`, `npm run typecheck`, and `npm run verify`; the verification strategy records their scope and evidence limits.
 
 ## Repository Map
 
@@ -42,7 +42,7 @@ Planned baseline: TypeScript, Vite, browser Canvas 2D, and a browser test layer 
 
 ## Getting Started
 
-There is no runnable application yet. After Gate G0 approval, the Software Engineer begins with [UMBRA-S1-001](engineering/agents/tasks/umbra-sprint-1-slices.md); that slice will establish the reproducible setup and validation path.
+Install dependencies, then use `npm run dev` for local development or `npm run verify` for the standard recorded validation sequence. Read the [verification strategy](engineering/umbra-verification-strategy.md) before interpreting a passing hook as product acceptance.
 
 ## Important References
 
